@@ -5,7 +5,7 @@ import java.util.NoSuchElementException;
 
 public class BackwardArrayIt implements Iterator<Integer> {
     private final int[] data;
-    private int point = 0;
+    private int point = data.length;
 
     public BackwardArrayIt(int[] data) {
         this.data = data;
@@ -21,6 +21,6 @@ public class BackwardArrayIt implements Iterator<Integer> {
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
-        return data[data.length - ++point];
+        return data[++point];
     }
 }
